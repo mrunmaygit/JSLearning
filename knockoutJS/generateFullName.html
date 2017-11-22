@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="assets/css/styles.css"/>
+		<title>Learn Knockout JS </title>
+		<script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" type = "text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="page_header">
+				<div class="page_header_wrapper">
+					<div class="logo"><img src="assets/images/knockoutjs.png"></div>
+					<div class="content"><h3>Knockout JS Observable binding</h4></div>
+			</header>
+
+			<section class="formsection">
+				<h4>Enter First Name : </h4><input type="text" name="first" data-bind="value : firstName, valueUpdate : 'afterkeydown'"></input></h4>
+				<h4>Enter Last Name : <input type="text" name="last" data-bind="value : lastName, valueUpdate : 'afterkeydown'"></input></h4>
+			</section>
+			
+			<section class="resultsection">
+				<div class="resultheading">
+					<h3>Result</h3>
+				</div>
+				<div class="resultcontent">
+					<h4>Fullname : <strong data-bind="text : fullName"></strong></h4>
+				</div>
+			</section>
+		<script>
+			function generateFullName(){
+				this.firstName = ko.observable();
+				this.lastName = ko.observable();
+				this.fullName = ko.computed(function(){return this.firstName()+" "+this.lastName();},this);
+				this.countryName = ko.observable("<otpion value='1'>India</option>");
+			}
+
+			var person = {
+				firstName : ko.observable(), 
+				lastName : ko.observable(),
+				fullName : ko.computed(function(){
+					return this.firstName+" "+this.lastName;
+				},this),
+			};
+
+			ko.applyBindings(new generateFullName());
+
+		</script>
+	</div>
+	</body>
+</html>

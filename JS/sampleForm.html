@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Sample JS validation</title>
+	</head>
+
+	<body>
+		<h2> Click to fetch AJAX</h2>
+
+		<div class="ajaxdata">
+			<span id="response"></span>
+		</div>
+
+		<br>
+		<button onclick="fetchAjax('assets/ajax/SampleText.txt')">AJAX 1</button> &nbsp;&nbsp;<button onclick="fetchAjax('assets/ajax/SampleText2.txt')">AJAX 2</button>
+
+	<script>
+		function fetchAjax(url){
+			var ajax = new XMLHttpRequest();
+			ajax.onreadystatechange = function (){
+				if(this.readyState==4 && this.status==200){
+					document.getElementById("response").innerHTML = this.responseText;
+				}
+			};
+			ajax.open("POST",url,true);
+			ajax.send();
+		}
+		
+	</script>
+
+	</body>

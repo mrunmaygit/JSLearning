@@ -1,0 +1,48 @@
+.wrapper{
+	font-family:"arial";
+}
+
+.page_header{
+	width:100%;
+	height:20%;
+}
+
+.page_header_wrapper{
+	width:100%;
+}
+
+.page_header .logo{
+	width:100%;
+	float:left;
+}
+
+.page_header .content{
+	width:30%;
+	color: #f49242;
+	font-size : 20px;
+}
+
+.page_header .logo > img{
+	height:80px;
+	width:250px;
+}
+
+.formsection{
+	color : #50525b;
+	padding:1%;
+}
+
+.resultheading{
+	color : #2d9b43;
+}
+
+.resultcontent{
+	width:30%;
+	background-color: #63ff82;
+	padding:20px;
+}
+
+.formsection{
+	width:30%;
+	background-color: #ffdb82;
+}

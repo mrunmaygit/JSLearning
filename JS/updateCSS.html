@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Sample JS validation</title>
+	</head>
+
+	<body style="background-color:black">
+		<h2> Click to Switch on/off </h2>
+
+		<div class="imagecontainer">
+			<img id="bulb" style="height:300px;width:150px" src="assets/images/on.jpeg"/>
+		</div>
+
+		<br>
+		<button onclick="switchme()">Switch</button>
+
+	<script>
+		function switchme(){
+			var src = document.getElementById("bulb").src;
+			if(src=="file:///var/www/html/learnJS/JS/assets/images/on.jpeg"){
+				document.getElementById("bulb").src="assets/images/off.jpeg";	
+			}
+			else{
+				document.getElementById("bulb").src="assets/images/on.jpeg";	
+			}
+		}
+		
+	</script>
+
+	</body>
