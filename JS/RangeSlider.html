@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Custom Option box</title>
+	<style>
+	#slidecontainer {
+		width: 100%;
+	}
+
+	.slider {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 25px;
+		background: #d3d3d3;
+		outline: none;
+		opacity: 0.7;
+		-webkit-transition: .2s;
+		transition: opacity .2s;
+	}
+
+	.slider:hover {
+		opacity: 1;
+	}
+
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 25px;
+		height: 25px;
+		background: #4CAF50;
+		cursor: pointer;
+	}
+
+	.slider::-moz-range-thumb {
+		width: 25px;
+		height: 25px;
+		background: #4CAF50;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+	<center>
+		<h4>Move slider to update image property</h4>
+	</center>
+	Select image from below : <select id="selectimage">
+			<option value="360.gif" selected="selected"> 360 Image</option>
+			<option value="magento.png">Magento Icon</option>
+			<otpion value="oracle.jpg">Oracle Icon</otpion>
+	</select>
+	<h5>For height</h5>
+	<input class="slider" type="range" min="10" max="1000" id="height"/>
+
+	<h5>For width</h5>
+	<input class="slider" type="range" min="10" max="1000" id="width"/>
+
+	<image id="image" src="assets/images/360.gif"/>
+	<script>
+		var selectimage = document.getElementById("selectimage");
+		var height = document.getElementById("height");
+		var width = document.getElementById("width");
+		var image = document.getElementById("image");
+		console.log(image);
+		console.log(selectimage);
+		height.onchange = function(){
+			image.height = height.value;
+			image.width = width.value;
+		}
+		width.onchange = function(){
+			image.height = height.value;
+			image.width = width.value;
+		}
+		selectimage.onchange= function(){
+			image.src="assets/images/"+this.value;
+		}
+	</script>
+</body>
