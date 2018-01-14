@@ -6,12 +6,16 @@
 var fileSystem = require("fs");
 
 // Read file
-fileSystem.readFile("/var/www/html/learnJS/JSLearning/Nodejs/FileReader/assets/text_files/readFile.txt",(err,data)=>{
+fileSystem.readFile("I:\\Mrunmay\\Work\\Learning_Projects\\JSLearning\\Nodejs\\FileReader\\assets\\text_files\\sampleCsv.csv",(err,data)=>{
 	if(err){
 		throw err;
 	}
-	console.log(data.toString());
+	//console.log(data.toString());
 });
 
+// Check file existance
+if(fileSystem.existsSync("I:\\Mrunmay\\Work\\Learning_Projects\\JSLearning\\Nodejs\\FileReader\\assets\\text_files\\sampleCsv.csv")){
+	console.log("File exists !");
+}
 // End line
 console.log("Completed");
